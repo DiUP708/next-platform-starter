@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Trillian Studio — Full Sales Flow Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{background:#f1f5f9;font-family:'Segoe UI',system-ui,sans-serif;}
+    .email-window{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.10);overflow:hidden;margin-bottom:2rem;}
+    .email-header{padding:16px 20px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:12px;}
+    .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0;}
+    .email-body{padding:20px 24px;line-height:1.7;color:#374151;font-size:15px;}
+    .email-body p{margin-bottom:12px;}
+    .email-body a{color:#e85d26;text-decoration:underline;}
+    .btn-pay{display:inline-block;background:#22c55e;color:#fff;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;margin:8px 0;}
+    .btn-demo{display:inline-block;background:#e85d26;color:#fff;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;margin:8px 0;}
+    .timeline-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+    .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;}
+    .website-preview{border:2px solid #e5e7eb;border-radius:12px;overflow:hidden;}
+    .step-connector{width:2px;background:#e5e7eb;margin:0 auto;height:40px;}
+    .reply-bubble{background:#f0fdf4;border-left:4px solid #22c55e;padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0;font-style:italic;color:#166534;}
+    .sent-bubble{background:#fff7ed;border-left:4px solid #e85d26;padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0;color:#7c2d12;}
+    .stage-badge{display:inline-flex;align-items:center;gap:6px;background:#1e2d40;color:#fff;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;}
+    pre{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;font-size:13px;overflow-x:auto;white-space:pre-wrap;}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div style="background:linear-gradient(135deg,#1e2d40 0%,#2d4a6b 100%);color:#fff;padding:40px 20px;text-align:center;">
+  <p style="font-size:13px;letter-spacing:2px;opacity:.6;text-transform:uppercase;margin-bottom:8px">Trillian Studio — Pilna pārdošanas simulācija</p>
+  <h1 style="font-size:2rem;font-weight:800;margin-bottom:8px">No atrašanas līdz pārdošanai</h1>
+  <p style="opacity:.7;max-width:500px;margin:0 auto">Pilns process kā agents patstāvīgi atrod, kontaktē un pārdod — bez tevis</p>
+</div>
+
+<div style="max-width:720px;margin:0 auto;padding:40px 16px;">
+
+<!-- STEP 1 -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge">⚡ Solis 1</div>
+  <span style="color:#6b7280;font-size:14px">Agents atrod klientu (Google Places)</span>
+</div>
+
+<div class="email-window">
+  <div style="background:#f8fafc;padding:16px 20px;border-bottom:1px solid #e5e7eb;">
+    <div style="font-size:13px;color:#6b7280;margin-bottom:4px">Agents atrod:</div>
+    <div style="font-weight:700;font-size:16px">West Florida Roofing · Tampa, FL</div>
+    <div style="display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;">
+      <span class="tag" style="background:#fef3c7;color:#92400e">⚡ HOT — nav mājaslapas</span>
+      <span class="tag" style="background:#dbeafe;color:#1e40af">5.0★ · 122 atsauksmes</span>
+      <span class="tag" style="background:#f0fdf4;color:#166534">+1 813-819-3712</span>
+    </div>
+  </div>
+  <div class="email-body" style="font-size:13px;color:#6b7280;">
+    <strong>Agents uzbūvē demo mājaslapu:</strong> <code>demos/west-florida-roofing/index.html</code><br/>
+    <strong>Status:</strong> demo_built → demo_live ✓
+  </div>
+</div>
+
+<div class="step-connector"></div>
+
+<!-- STEP 2 -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge">✉️ Solis 2</div>
+  <span style="color:#6b7280;font-size:14px">Agents nosūta 1. epastu</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#fff7ed;">
+    <div class="avatar" style="background:#e85d26;color:#fff;">A</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Arvīds · Trillian Studio <span style="color:#9ca3af;font-weight:400">→ info@westfloridaroofing.com</span></div>
+      <div style="font-size:12px;color:#9ca3af;">Trešdiena, 9:02</div>
+    </div>
+    <div style="margin-left:auto;"><span class="tag" style="background:#fed7aa;color:#92400e">NOSŪTĪTS</span></div>
+  </div>
+  <div class="email-body">
+    <div style="font-size:13px;color:#9ca3af;margin-bottom:8px;font-weight:600;">SUBJECT: built a new website for West Florida Roofing</div>
+    <p>Hi there,</p>
+    <p>I came across West Florida Roofing — <strong>5.0★ on Google</strong>, clearly your customers love the work.</p>
+    <p>I build websites for roofing companies that turn that reputation into more quote calls, and I went ahead and built a quick demo of what a new site for West Florida Roofing could look like:</p>
+    <p style="text-align:center;margin:20px 0;">
+      <a href="west-florida-roofing/" class="btn-demo">👉 See Your Demo Site</a>
+    </p>
+    <p>No cost and no obligation — if it's not for you, no problem. If you like it, I can have the real version live in <strong>7 days</strong>, and <strong>you don't pay unless you love it.</strong></p>
+    <p>— Arvīds · Trillian Studio</p>
+  </div>
+</div>
+
+<div class="step-connector"></div>
+
+<!-- STEP 3 — NO REPLY, FOLLOW UP -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge" style="background:#6b7280;">⏰ 3 dienas vēlāk</div>
+  <span style="color:#6b7280;font-size:14px">Nav atbildes — agents sūta follow-up</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#fafafa;">
+    <div class="avatar" style="background:#6b7280;color:#fff;">A</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Arvīds <span style="color:#9ca3af;font-weight:400">→ info@westfloridaroofing.com</span></div>
+      <div style="font-size:12px;color:#9ca3af;">Sestdiena, 9:04 · automātisks follow-up</div>
+    </div>
+  </div>
+  <div class="email-body">
+    <div style="font-size:13px;color:#9ca3af;margin-bottom:8px;font-weight:600;">SUBJECT: Re: built a new website for West Florida Roofing</div>
+    <p>Hi,</p>
+    <p>Just circling back — I know things get busy. Here's that demo link again:</p>
+    <p><a href="west-florida-roofing/">westfloridaroofing.trillian.studio/demo</a></p>
+    <p>Takes 30 seconds to look at. If it's not a fit, just say the word and I'll leave you alone.</p>
+    <p>— Arvīds</p>
+  </div>
+</div>
+
+<div class="step-connector"></div>
+
+<!-- STEP 4 — CLIENT REPLIES -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge" style="background:#16a34a;">💬 Solis 3</div>
+  <span style="color:#6b7280;font-size:14px">Klients atbild — AI agents lasa un atbild</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#f0fdf4;">
+    <div class="avatar" style="background:#16a34a;color:#fff;">W</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">West Florida Roofing <span style="color:#9ca3af;font-weight:400">→ Arvīds</span></div>
+      <div style="font-size:12px;color:#9ca3af;">Svētdiena, 14:37</div>
+    </div>
+    <div style="margin-left:auto;"><span class="tag" style="background:#bbf7d0;color:#166534">SAŅEMTS</span></div>
+  </div>
+  <div class="email-body">
+    <div class="reply-bubble">
+      Hey — actually looked at that demo, looks pretty good. How much does this cost and what exactly do I get?
+    </div>
+  </div>
+</div>
+
+<!-- AI processes -->
+<div style="text-align:center;padding:12px;color:#6b7280;font-size:13px;">
+  <span style="background:#ede9fe;color:#7c3aed;padding:4px 12px;border-radius:20px;font-weight:600;">🤖 AI agents klasificē: INTERESTED → ģenerē atbildi ar Claude</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#fff7ed;">
+    <div class="avatar" style="background:#e85d26;color:#fff;">A</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Arvīds · Trillian Studio <span style="color:#9ca3af;font-weight:400">→ West Florida Roofing</span></div>
+      <div style="font-size:12px;color:#9ca3af;">Svētdiena, 14:38 · automātiska AI atbilde</div>
+    </div>
+  </div>
+  <div class="email-body">
+    <p>Hey, glad you like it!</p>
+    <p>Here's exactly what you get:</p>
+    <ul style="margin:12px 0 12px 20px;list-style:disc;display:flex;flex-direction:column;gap:6px;">
+      <li><strong>5-page professional website</strong> — Home, Services, About, Gallery, Contact</li>
+      <li><strong>Mobile-first design</strong> — looks great on every phone</li>
+      <li><strong>Built to get quote calls</strong> — every button, headline, and layout optimized for conversions</li>
+      <li><strong>Your domain</strong> or we host it for you</li>
+      <li><strong>Live in 7 days</strong> from payment</li>
+    </ul>
+    <p><strong>Price: $1,500 one-time.</strong></p>
+    <p>Optional: <strong>$200/month care plan</strong> — we handle hosting, updates, and monthly tweaks. Most clients skip it and do fine.</p>
+    <p style="background:#fef3c7;padding:12px;border-radius:8px;border-left:4px solid #f59e0b;"><strong>Guarantee:</strong> If you don't love the first design, you don't pay a cent. Zero risk.</p>
+    <p>Ready to move forward?</p>
+    <p style="text-align:center;margin:20px 0;">
+      <a href="#" class="btn-pay">💳 Pay $1,500 — Secure Checkout</a>
+    </p>
+    <p style="font-size:13px;color:#9ca3af;">Questions? Just reply — happy to answer.</p>
+    <p>— Arvīds · Trillian Studio</p>
+  </div>
+</div>
+
+<div class="step-connector"></div>
+
+<!-- STEP 5 — OBJECTION -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge" style="background:#2563eb;">💬 Solis 4</div>
+  <span style="color:#6b7280;font-size:14px">Klients jautā vairāk — AI turpina</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#f0fdf4;">
+    <div class="avatar" style="background:#16a34a;color:#fff;">W</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">West Florida Roofing</div>
+      <div style="font-size:12px;color:#9ca3af;">Svētdiena, 15:10</div>
+    </div>
+  </div>
+  <div class="email-body">
+    <div class="reply-bubble">
+      Can we add our own photos? And do you handle the domain transfer?
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:12px;color:#6b7280;font-size:13px;">
+  <span style="background:#ede9fe;color:#7c3aed;padding:4px 12px;border-radius:20px;font-weight:600;">🤖 AI agents atbild → 90 sekunžu laikā</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#fff7ed;">
+    <div class="avatar" style="background:#e85d26;color:#fff;">A</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Arvīds · Trillian Studio</div>
+      <div style="font-size:12px;color:#9ca3af;">Svētdiena, 15:11 · AI atbilde</div>
+    </div>
+  </div>
+  <div class="email-body">
+    <p>Yes on both:</p>
+    <p>📸 <strong>Photos</strong> — absolutely. After payment, just email us your photos and we'll swap them in. Most clients send 5–10 job photos from their phone. If you don't have any, the site looks great with the placeholder photos too.</p>
+    <p>🌐 <strong>Domain</strong> — yes, we handle it. Two options:<br/>
+    1. You keep your existing domain (westfloridaroofing.com) and we point it to the new site — takes 10 minutes on your end<br/>
+    2. We host it on <em>westfloridaroofing.trillian.studio</em> until you're ready to switch</p>
+    <p>Either way it's included in the $1,500.</p>
+    <p style="text-align:center;margin:20px 0;">
+      <a href="#" class="btn-pay">💳 Let's do it — $1,500</a>
+    </p>
+    <p>— Arvīds</p>
+  </div>
+</div>
+
+<div class="step-connector"></div>
+
+<!-- STEP 6 — DEAL CLOSED -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge" style="background:#059669;">💰 Solis 5</div>
+  <span style="color:#6b7280;font-size:14px">Klients maksā — darījums slēgts</span>
+</div>
+
+<div class="email-window" style="border:2px solid #22c55e;">
+  <div class="email-header" style="background:#f0fdf4;">
+    <div class="avatar" style="background:#16a34a;color:#fff;">$</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Stripe Payment · <span style="color:#16a34a;">$1,500.00 received</span></div>
+      <div style="font-size:12px;color:#9ca3af;">West Florida Roofing · Pirmdiena, 09:14</div>
+    </div>
+    <div style="margin-left:auto;"><span class="tag" style="background:#bbf7d0;color:#166534">✓ MAKSĀJUMS SAŅEMTS</span></div>
+  </div>
+  <div class="email-body" style="font-size:14px;">
+    <div style="background:#f0fdf4;border-radius:8px;padding:16px;text-align:center;">
+      <div style="font-size:2rem;font-weight:800;color:#16a34a;">$1,500</div>
+      <div style="color:#6b7280;margin-top:4px;">West Florida Roofing · Website Build</div>
+    </div>
+    <div style="margin-top:12px;font-size:13px;color:#6b7280;">
+      → Agents automātiski: status <strong>booked</strong> · uzsāk finālās mājaslapas izveidi
+    </div>
+  </div>
+</div>
+
+<!-- Agent sends confirmation -->
+<div class="email-window">
+  <div class="email-header" style="background:#fff7ed;">
+    <div class="avatar" style="background:#e85d26;color:#fff;">A</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Arvīds · Trillian Studio <span style="color:#9ca3af;font-weight:400">→ West Florida Roofing</span></div>
+      <div style="font-size:12px;color:#9ca3af;">Pirmdiena, 09:15 · automātiski</div>
+    </div>
+  </div>
+  <div class="email-body">
+    <p>Payment received — thank you!</p>
+    <p>Here's what happens now:</p>
+    <ol style="margin:12px 0 12px 20px;list-style:decimal;display:flex;flex-direction:column;gap:8px;">
+      <li>Your site is being finalized right now</li>
+      <li><strong>Optional:</strong> reply with any photos you'd like on the site (5–10 from your phone is perfect)</li>
+      <li>You'll receive a live link within <strong>7 days</strong> — usually faster</li>
+      <li>If anything needs tweaking, just reply — we'll fix it same day</li>
+    </ol>
+    <p>— Arvīds · Trillian Studio</p>
+  </div>
+</div>
+
+<div class="step-connector"></div>
+
+<!-- STEP 7 — SITE DELIVERED -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+  <div class="stage-badge" style="background:#7c3aed;">🚀 Solis 6</div>
+  <span style="color:#6b7280;font-size:14px">Mājaslapa gatava — agents nosūta saiti</span>
+</div>
+
+<div class="email-window">
+  <div class="email-header" style="background:#faf5ff;">
+    <div class="avatar" style="background:#7c3aed;color:#fff;">A</div>
+    <div>
+      <div style="font-weight:700;font-size:14px">Arvīds · Trillian Studio <span style="color:#9ca3af;font-weight:400">→ West Florida Roofing</span></div>
+      <div style="font-size:12px;color:#9ca3af;">Otrdiena, 10:00 · mājaslapa gatava</div>
+    </div>
+  </div>
+  <div class="email-body">
+    <p>Your new website is <strong>live</strong> 🎉</p>
+    <p style="text-align:center;margin:20px 0;">
+      <a href="west-florida-roofing/" class="btn-demo" style="background:#7c3aed;">🌐 westfloridaroofing.trillian.studio</a>
+    </p>
+    <p>To connect your own domain (westfloridaroofing.com), log into your domain registrar and add this DNS record:</p>
+    <pre>Type: CNAME
+Name: www
+Value: westfloridaroofing.trillian.studio</pre>
+    <p>Takes 5 minutes and propagates within an hour. Let me know if you need help — I'll walk you through it by email.</p>
+    <p>Everything look good? Any changes needed, just reply.</p>
+    <p>— Arvīds · Trillian Studio</p>
+  </div>
+</div>
+
+<!-- RESULT BOX -->
+<div style="background:linear-gradient(135deg,#1e2d40,#2d4a6b);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-top:40px;">
+  <div style="font-size:13px;letter-spacing:2px;opacity:.6;text-transform:uppercase;margin-bottom:8px">Rezultāts</div>
+  <div style="font-size:3rem;font-weight:800;color:#e85d26;">$1,500</div>
+  <div style="opacity:.7;margin-top:4px;">West Florida Roofing → samaksāts</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;">
+    <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:16px;">
+      <div style="font-size:1.5rem;font-weight:800;">0</div>
+      <div style="font-size:12px;opacity:.6;margin-top:4px;">Tavi zvani</div>
+    </div>
+    <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:16px;">
+      <div style="font-size:1.5rem;font-weight:800;">0</div>
+      <div style="font-size:12px;opacity:.6;margin-top:4px;">Tavas stundas</div>
+    </div>
+    <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:16px;">
+      <div style="font-size:1.5rem;font-weight:800;">7 d.</div>
+      <div style="font-size:12px;opacity:.6;margin-top:4px;">Atrašana → nauda</div>
+    </div>
+  </div>
+  <div style="margin-top:24px;opacity:.5;font-size:13px;">Kamēr tu dzīvo savu dzīvi, agents strādā pie nākamā klienta</div>
+</div>
+
+<!-- LINK TO ACTUAL DEMO -->
+<div style="margin-top:40px;text-align:center;">
+  <p style="color:#6b7280;margin-bottom:12px;font-size:14px">↓ Tā izskatās īstā klienata mājaslapa ko saņems:</p>
+  <a href="west-florida-roofing/" style="display:inline-block;background:#1e2d40;color:#fff;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:16px;">
+    🏠 Atvērt West Florida Roofing demo →
+  </a>
+  <div style="margin-top:12px;">
+    <a href="az-tech-america/" style="display:inline-block;background:#0f3460;color:#fff;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:16px;">
+      ❄️ Atvērt AZ Tech America (HVAC) demo →
+    </a>
+  </div>
+  <div style="margin-top:12px;">
+    <a href="index.html" style="display:inline-block;background:#374151;color:#fff;font-weight:600;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;">
+      📋 Visas 13 mājaslapas →
+    </a>
+  </div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
