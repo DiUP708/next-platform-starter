@@ -38,3 +38,13 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# Trillian agent
+trillian/.env
+trillian/state/leads_master.csv
+trillian/state/sent_log.csv
+trillian/state/replies.csv
+trillian/state/spend.json
+trillian/logs/
+trillian/errors/
+trillian/__pycache__/
