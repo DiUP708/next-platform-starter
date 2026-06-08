@@ -38,3 +38,9 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# ChairFill — never commit real lead lists, patient data, or generated outreach
+leads.csv
+*.patients.csv
+outreach.json
+/exports
