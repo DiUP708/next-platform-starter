@@ -1,41 +1,49 @@
-# Next.js on Netlify Platform Starter
+# ChairFill 🦷
 
-[Live Demo](https://nextjs-platform-starter.netlify.app/)
+**AI patient reactivation for dental practices (US / UK).**
+We turn a practice's dormant patient list into booked appointments — done-for-you,
+pay-per-result.
 
-A modern starter based on Next.js 14 (App Router), Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+This repo contains both the **marketing site** (Next.js on Netlify) and the full
+**business playbook** to take it from €0 to €10k/month.
 
-In this site, Netlify Core Primitives are used both implictly for running Next.js features (e.g. Route Handlers, image optimization via `next/image`, and more) and also explicitly by the user code.
+---
 
-Implicit usage means you're using any Next.js functionality and everything "just works" when deployed - all the plumbing is done for you. Explicit usage is framework-agnostic and typically provides more features than what Next.js exposes.
+## What's here
 
-## Deploying to Netlify
+| Path | What it is |
+|------|-----------|
+| `app/` | The ChairFill landing page (Next.js 15 + Tailwind v4) |
+| `components/roi-calculator.jsx` | Interactive dormant-list ROI calculator (the sales hook) |
+| `playbook/` | **The whole business in a box** — read `playbook/00-START-HERE.md` first |
+| `playbook/templates/` | Ready-to-use messages, onboarding checklist, DPA |
+| `scripts/generate-outreach.mjs` | Claude-powered cold-email personalizer |
+| `leads.sample.csv` | Example lead format (real `leads.csv` is gitignored) |
 
-This site requires [Netlify Next Runtime v5](https://docs.netlify.com/frameworks/next-js/overview/) for full functionality. That version is now being gradually rolled out to all Netlify accounts.
+## Quick start
 
-After deploying via the button below, please visit the **Site Overview** page for your new site to check whether it is already using the v5 runtime. If not, you'll be prompted to opt-in to to v5.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-platform-starter)
-
-## Developing Locally
-
-1. Clone this repository, then run `npm install` in its root directory.
-
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
-
-```
-npm install netlify-cli@latest -g
-```
-
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
-
-```
-netlify link
+```bash
+npm install
+npm run dev      # landing page at http://localhost:3000
+npm run build    # production build
 ```
 
-4. Then, run the Next.js development server via Netlify CLI:
+Before deploying, edit the `CALENDLY` and `EMAIL` constants in `app/page.jsx`
+(and the booking link in `components/roi-calculator.jsx`).
 
-```
-netlify dev
+## The business, in one line
+
+A practice has hundreds of patients who went quiet. ChairFill's AI re-invites them by
+text + email, books them back into the calendar, and the practice pays only for patients
+who show up. See `playbook/00-START-HERE.md` for the full 30-day plan.
+
+## Generate outreach drafts
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+export CALENDLY_URL=https://calendly.com/your-handle/15min
+export SENDER_NAME="Your Name"
+node scripts/generate-outreach.mjs leads.sample.csv > outreach.json
 ```
 
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
+> Deployed on Netlify. Built from the Next.js Platform Starter.
